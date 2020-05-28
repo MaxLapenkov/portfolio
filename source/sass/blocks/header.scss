@@ -1,14 +1,32 @@
 .page-header{
-    background-color: $secondary-color;
+    background: $secondary-color url('../../img/Bg.jpg')  no-repeat ;
+    background-size: cover;
+    padding:  100px 15px 0px 15px;
+    height: calc(100vh - 100px);
+
+      .button{
+        color: $blue-color;
+        background-color: inherit;
+        border: 2px solid $blue-color;
+        padding: 15px 15px;
+        border-radius: 20px;
+        transition: 0.5s;
+        font-size: 20px;
+        &:hover{
+          background-color: $blue-color;
+          color: $main-color;
+          cursor: pointer;
+        }
+      }
 }
 .header{
-    font-family: $font-poppins;
     display: flex;
     justify-content: space-between;
-    padding:  100px 15px 50px 15px;
     &__logo{
         display: flex;
         align-items: center;
+        font-weight: bold;
+        font-size: 32px;
     }
 }
 .main-nav{
@@ -16,20 +34,80 @@
     align-items: center;
     &__item{
         color: $text-color;
-        margin-right: 20px;
+        margin-right: 65px;
+        font-size: 20px;
     }
+    a{
+        transition: 0.5s;
+        position: relative;
+        line-height: 1;
+        &::after{
+          display: block;
+          position: absolute;
+          left: 0; 
+          width: 0;
+          height: 2px;
+          background-color: $blue-color;
+          content: "";
+          transition: width 0.5s ease-out;
+        }
+        &:hover{
+          color: $blue-color;
+          cursor: pointer;
+          &::after{
+            width: 100%;
+          }
+        }
+      }
+}
+.about-me{
+    display: flex;
+}
+.info {
+    margin-left: auto;
+    margin-right: 15%;
+    margin-top: 15%;
+    margin-bottom: 20%;
+   
+   &__header{
+       font-family: $font-raleway;
+       font-weight: 300;
+       font-size: 36px;
+       margin: 0;
+   }
+   &__description {
+       margin-top: 60px;
+       margin-bottom: 60px;
+       font-weight: bold;
+       font-size: 48px;
+   }
+   &__about-me {
+        font-family: $font-raleway;
+        font-size: 16px;
+        margin: 0;
+        margin-bottom: 60px;
+   }
+   &__button{
+       &::after{
+           display: none;
+       }
+   }
 }
 
 @media only screen and (max-width: $max-mobile-width) {
     .header{
         flex-direction: column;
         align-items: center;
+        &__logo{
+            font-size: 26px;
+        }
     }
     .main-nav {
         margin-top: 20px;
         flex-wrap: wrap;
         justify-content: center;
         &__item{
+            margin-right: 10px;
             &:nth-last-of-type(1){
                 margin-right: 0;
             }
@@ -40,5 +118,22 @@
             display: flex;
             justify-content: center;
         }
+    }
+}
+@media only screen and (max-width: $tablet-width) {
+    .page-header{
+        background: $secondary-color;
+    }
+    .about-me{
+        flex-direction: column;
+        align-items: center;
+    }
+    .picture{
+        width: 50%;
+    }
+    .info{
+        text-align: center;
+        margin: 0;
+        margin-top: 20px;
     }
 }
