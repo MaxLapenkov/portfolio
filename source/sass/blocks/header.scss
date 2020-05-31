@@ -89,9 +89,7 @@
    }
 }
 
-@media only screen and (max-width: $max-mobile-width) {
 
-}
 @media only screen and (max-width: $tablet-width) {
     .header{
         flex-direction: column;
@@ -131,5 +129,13 @@
         text-align: center;
         margin: 0;
         margin-top: 20px;
+    }
+}
+@media only screen and (max-width: $max-mobile-width) {
+    .main-nav{
+        justify-content: space-around;
+        &__item{
+            margin-right: 0;
+        }
     }
 }
