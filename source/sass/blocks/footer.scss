@@ -11,7 +11,7 @@
         text-align: center;
         &__item{
             min-width: 55px;
-            margin-right: 80px;
+            margin-right: 60px;
             &:nth-last-of-type(1){
                 margin-right: 0;
             }
@@ -19,9 +19,12 @@
         }
     }
     &__social{
-        margin-top: 70px;
+        width: 50%;
+        
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
         justify-content: space-between;
     }
     &__icon{
@@ -31,7 +34,6 @@
         width: 55px;
         height: 55px;
         background-color: $main-color;
-        margin-right: 100px;
         border-radius: 50%;
         transition: 0.3s;
         &:nth-last-of-type(1){
@@ -49,6 +51,32 @@
     &__logo{
         path{
             fill: #A7A7A7;
+        }
+    }
+    &__bottom{
+        margin-top: 70px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+@media only screen and (max-width: $max-mobile-width) {
+    .footer{
+        &__bottom{
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .main-nav{
+            text-align: center;
+            &__item{
+                margin-right: 10px;
+                &:nth-last-of-type(1){
+                    margin-right: 0;
+                }
+                
+            }
         }
     }
 }

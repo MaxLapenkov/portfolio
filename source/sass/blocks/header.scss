@@ -1,23 +1,11 @@
 .page-header{
-    background: $secondary-color url('../../img/Bg.jpg')  no-repeat ;
+    background-color: $secondary-color;
+    // background: $secondary-color url('../../img/Bg.jpg')  no-repeat ;
     background-size: cover;
-    padding:  100px 15px 0px 15px;
-    height: calc(100vh - 100px);
+    padding:  100px 15px 20px 15px;
+    min-height: calc(100vh - 100px);
 
-      .button{
-        color: $blue-color;
-        background-color: inherit;
-        border: 2px solid $blue-color;
-        padding: 15px 15px;
-        border-radius: 20px;
-        transition: 0.5s;
-        font-size: 20px;
-        &:hover{
-          background-color: $blue-color;
-          color: $main-color;
-          cursor: pointer;
-        }
-      }
+
 }
 .header{
     display: flex;
@@ -60,14 +48,21 @@
         }
       }
 }
+.my-image{
+    margin-top: 50px;
+    display: block;
+    width: 280px;
+    height: 235px;
+    border-radius: 5px;
+}
 .about-me{
     display: flex;
+    position: relative;
 }
 .info {
     margin-left: auto;
     margin-right: 15%;
     margin-top: 15%;
-    margin-bottom: 20%;
    
    &__header{
        font-family: $font-raleway;
@@ -95,6 +90,9 @@
 }
 
 @media only screen and (max-width: $max-mobile-width) {
+
+}
+@media only screen and (max-width: $tablet-width) {
     .header{
         flex-direction: column;
         align-items: center;
@@ -119,8 +117,6 @@
             justify-content: center;
         }
     }
-}
-@media only screen and (max-width: $tablet-width) {
     .page-header{
         background: $secondary-color;
     }

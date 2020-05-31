@@ -50,7 +50,11 @@ gulp.task("minify", () => {
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest("build"));
 });
-
+gulp.task("php", () => {
+  return gulp
+    .src("source/*.php")
+    .pipe(gulp.dest("build"));
+})
 gulp.task("compress", function() {
   return pipeline(gulp.src("source/js/*.js"), uglify(), gulp.dest("build/js"));
 });
@@ -121,6 +125,7 @@ gulp.task(
     "copy",
     "css",
     "minify",
+    "php",
     "compress",
     "sprite",
     "html",

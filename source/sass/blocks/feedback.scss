@@ -4,9 +4,10 @@
     padding-bottom: 160px;
     display: flex;
     flex-direction: column;
-    &__title{
-        font-size: 50px;
-    }
+	&__header{
+		margin-bottom: 0;
+	}
+	
 }
 .slider {
 	height: 50vh;

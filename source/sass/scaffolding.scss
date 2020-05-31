@@ -6,6 +6,22 @@ body {
   font-family: $font-poppins;
   color: black;
   background-color: $main-color;
+  position: relative;
+}
+
+.button{
+  color: $blue-color;
+  background-color: inherit;
+  border: 2px solid $blue-color;
+  padding: 15px 15px;
+  border-radius: 20px;
+  transition: 0.5s;
+  font-size: 20px;
+  &:hover{
+    background-color: $blue-color;
+    color: $main-color;
+    cursor: pointer;
+  }
 }
 a{
   text-decoration: none;
@@ -19,6 +35,7 @@ a{
   position: relative;
 }
 .section--header{
+  font-size: 50px;
   margin: 0 auto;
   margin-top: 135px;
   margin-bottom: 75px;
