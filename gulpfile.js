@@ -21,7 +21,7 @@ var pipeline = require("readable-stream").pipeline;
 
 gulp.task("copy", function() {
   return gulp
-    .src(["source/fonts/**/*.{woff,woff2}", "source/img/**", "source/js/**"], {
+    .src(["source/fonts/**/*.ttf", "source/img/**", "source/js/**"], {
       base: "source"
     })
     .pipe(gulp.dest("build"));
@@ -50,11 +50,6 @@ gulp.task("minify", () => {
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest("build"));
 });
-gulp.task("php", () => {
-  return gulp
-    .src("source/*.php")
-    .pipe(gulp.dest("build"));
-})
 gulp.task("compress", function() {
   return pipeline(gulp.src("source/js/*.js"), uglify(), gulp.dest("build/js"));
 });
@@ -125,7 +120,6 @@ gulp.task(
     "copy",
     "css",
     "minify",
-    "php",
     "compress",
     "sprite",
     "html",
